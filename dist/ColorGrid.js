@@ -2,7 +2,7 @@ import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from "react-tooltip";
 
 var ColorGridComponent = function ColorGridComponent(props) {
   var colors = props.colors;
@@ -20,32 +20,23 @@ var ColorGridComponent = function ColorGridComponent(props) {
     pauseOnVisibilityChange: true,
     draggable: false
   }), React.createElement(ReactTooltip, null), colors.items.map(function (color, i) {
-    return React.createElement(CopyToClipboard, {
+    return React.createElement("div", {
+      key: i
+    }, React.createElement(CopyToClipboard, {
       text: color.colorCode,
       onCopy: function onCopy() {
         return copyToClipboard(color.colorCode);
       }
     }, React.createElement("div", {
-      key: i,
       style: {
         backgroundColor: color.colorCode,
         color: color.textColor,
         cursor: "pointer"
       },
       "data-tip": "Copy ".concat(color.colorCode)
-    }, color.name && color.name, React.createElement("br", null), color.colorCode));
+    }, color.name && color.name, React.createElement("br", null), color.colorCode)));
   }));
 };
 
-ColorGridComponent.defaultProps = {
-  colors: {
-    items: [{
-      colorCode: "#1866e2",
-      textColor: "white"
-    }, {
-      colorCode: "#e23d17",
-      textColor: "white"
-    }]
-  }
-};
+ColorGridComponent.defaultProps = {};
 export default ColorGridComponent;

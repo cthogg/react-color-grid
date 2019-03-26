@@ -3,7 +3,7 @@ import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from "react-tooltip";
 
 const ColorGridComponent = props => {
   const { colors } = props;
@@ -24,27 +24,28 @@ const ColorGridComponent = props => {
       />
       <ReactTooltip />
       {colors.items.map((color, i) => (
+        <div key={i}> 
         <CopyToClipboard
           text={color.colorCode}
           onCopy={() => copyToClipboard(color.colorCode)}
         >
           <div
-            key={i}
             style={{
               backgroundColor: color.colorCode,
               color: color.textColor,
               cursor: "pointer"
             }}
-            data-tip={`Copy ${color.colorCode}`} 
+            data-tip={`Copy ${color.colorCode}`}
           >
-            {color.name && 
-            color.name}
+            {color.name && color.name}
             {<br />}
             {color.colorCode}
           </div>
         </CopyToClipboard>
+        </div>
       ))}
     </div>
+
   );
 };
 
@@ -59,19 +60,6 @@ ColorGridComponent.propTypes = {
     )
   })
 };
-ColorGridComponent.defaultProps = {
-  colors: {
-    items: [
-      {
-        colorCode: "#1866e2",
-        textColor: "white"
-      },
-      {
-        colorCode: "#e23d17",
-        textColor: "white"
-      }
-    ]
-  }
-};
+ColorGridComponent.defaultProps = {};
 
 export default ColorGridComponent;
