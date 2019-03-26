@@ -3,7 +3,10 @@
 - I could not find a nice component to show the colors in a styleguide, so I made my own.
 
 
-
+### Roadmap
+- replace the tooltip library and toastify with css to increase performance.
+- add tests
+- improve documentation
 
 ### Inspiration
 http://ux.mailchimp.com/patterns/color

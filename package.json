@@ -4,7 +4,8 @@
   "dependencies": {
     "@babel/cli": "^7.2.3",
     "react-copy-to-clipboard": "^5.0.1",
-    "react-toastify": "^5.0.0-rc.3"
+    "react-toastify": "^5.0.0-rc.3",
+    "react-tooltip": "^3.10.0"
   },
   "devDependencies": {
     "react": "^16.8.5",
