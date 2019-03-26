@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast, ToastContainer } from "react-toastify";
-import ReactTooltip from 'react-tooltip'
 import "react-toastify/dist/ReactToastify.min.css";
+import ReactTooltip from 'react-tooltip';
 
 const ColorGridComponent = props => {
   const { colors } = props;
@@ -63,11 +63,11 @@ ColorGridComponent.defaultProps = {
   colors: {
     items: [
       {
-        colorCode: "red",
+        colorCode: "#1866e2",
         textColor: "white"
       },
       {
-        colorCode: "blue",
+        colorCode: "#e23d17",
         textColor: "white"
       }
     ]
