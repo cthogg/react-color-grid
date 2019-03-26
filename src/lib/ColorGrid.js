@@ -1,16 +1,26 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const ColorGridComponent = props => {
   const { colors } = props;
-  const [copySuccess, setCopySuccess] = useState("");
   function copyToClipboard(text) {
-    setCopySuccess(`Copied ${text}!`);
+    toast.success(`Copied ${text}`);
   }
+
   return (
     <div>
-      {document.queryCommandSupported("copy") && <div>{copySuccess}</div>}
+      <ToastContainer
+        position="bottom-left"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnVisibilityChange
+        draggable={false}
+      />
       {colors.items.map((color, i) => (
         <CopyToClipboard
           text={color.colorCode}
