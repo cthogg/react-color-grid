@@ -29,8 +29,6 @@ const ColorGridComponent = props => {
       {colors.items.map((color, i) => (
         <div
           style={{
-            height: "100px",
-            width: "100px",
             backgroundColor: color.colorCode,
             color: color.textColor
           }}
