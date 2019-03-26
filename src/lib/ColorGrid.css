@@ -1,0 +1,7 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: green;
+  height: 500px;
+  width: 500px;
+}
